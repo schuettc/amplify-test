@@ -9,11 +9,6 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    },
-    "transcribeMeeting": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   },
   "api": {
@@ -75,24 +70,6 @@
           "EMAIL"
         ]
       }
-    }
-  },
-  "hosting": {
-    "S3AndCloudFront": {
-      "service": "S3AndCloudFront",
-      "providerPlugin": "awscloudformation"
-    }
-  },
-  "predictions": {
-    "translateText112eae37": {
-      "providerPlugin": "awscloudformation",
-      "service": "Translate",
-      "convertType": "translateText"
-    },
-    "transcriptionebce4954": {
-      "providerPlugin": "awscloudformation",
-      "service": "Transcribe",
-      "convertType": "transcription"
     }
   }
 }

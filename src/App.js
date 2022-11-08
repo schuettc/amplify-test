@@ -5,8 +5,6 @@ import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import '@cloudscape-design/global-styles/index.css';
 import VideoMeeting from './VideoMeeting';
-import TranscriptionComponent from './TranscriptionMeeting';
-import Transcription from './Transcription';
 import MeetingControlBar from './MeetingControlBar';
 import awsExports from './aws-exports';
 import { MeetingProvider } from 'amazon-chime-sdk-component-library-react';
@@ -22,21 +20,6 @@ import {
 
 Amplify.configure(awsExports);
 Amplify.addPluggable(new AmazonAIPredictionsProvider());
-
-const sourceLanguages = [
-  { language: 'English - US', code: 'en-US' },
-  { language: 'English - GB', code: 'en-GB' },
-  { language: 'English - AU', code: 'en-AU' },
-  { language: 'Spanish - US', code: 'es-US' },
-  { language: 'French - CA', code: 'fr-CA' },
-  { language: 'French', code: 'fr-FR' },
-  { language: 'Italian', code: 'it-IT' },
-  { language: 'German', code: 'de-DE' },
-  { language: 'Portuguese - BR', code: 'pt-BR' },
-  { language: 'Japanese', code: 'ja' },
-  { language: 'Korean', code: 'ko-KR' },
-  { language: 'Chinese - Simplified', code: 'zh-CN' },
-];
 
 const App = () => {
   const [currentCredentials, setCurrentCredentials] = useState({});
@@ -124,38 +107,8 @@ const App = () => {
                   />
                 </Container>
               </SpaceBetween>
-              <Transcription
-                transcribeStatus={transcribeStatus}
-                setTranscribeStatus={setTranscribeStatus}
-                translateStatus={translateStatus}
-                setTranslateStatus={setTranslateStatus}
-                sourceLanguages={sourceLanguages}
-                targetLanguage={sourceLanguage}
-                sourceLanguage={sourceLanguage}
-                setSourceLanguage={setSourceLanguage}
-                setTranscripts={setTranscripts}
-                setLine={setLine}
-                transcripts={transcripts}
-                lines={lines}
-              ></Transcription>
             </SpaceBetween>
           </ContentLayout>
-
-          <TranscriptionComponent
-            currentCredentials={currentCredentials}
-            currentSession={currentSession}
-            transcribeStatus={transcribeStatus}
-            sourceLanguage={sourceLanguage}
-            setTranscripts={setTranscripts}
-            transcripts={transcripts}
-            lines={lines}
-            localMute={localMute}
-            setMicrophoneStream={setMicrophoneStream}
-            setTranscriptionClient={setTranscriptionClient}
-            microphoneStream={microphoneStream}
-            transcriptionClient={transcriptionClient}
-            user={user}
-          />
         </MeetingProvider>
       )}
     </Authenticator>

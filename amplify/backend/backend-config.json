@@ -31,14 +31,6 @@
             "Name",
             "Arn"
           ]
-        },
-        {
-          "category": "function",
-          "resourceName": "transcribeMeeting",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
         }
       ]
     }

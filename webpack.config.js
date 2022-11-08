@@ -18,6 +18,7 @@ module.exports = {
       directory: path.join(__dirname, 'public'),
     },
     compress: true,
+    allowedHosts: 'all',
     port: 8080,
   },
   module: {

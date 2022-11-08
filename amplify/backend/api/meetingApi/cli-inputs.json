@@ -14,13 +14,7 @@
       "permissions": {
         "setting": "open"
       }
-    },
-    "/transcribe": {
-      "name": "/transcribe",
-      "lambdaFunction": "transcribeMeeting",
-      "permissions": {
-        "setting": "open"
-      }
     }
   }
+}
 }

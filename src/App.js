@@ -17,7 +17,7 @@ import {
   SpaceBetween,
   Button,
 } from '@cloudscape-design/components';
-
+const sourceLanguages = [];
 Amplify.configure(awsExports);
 Amplify.addPluggable(new AmazonAIPredictionsProvider());
 

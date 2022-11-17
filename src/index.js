@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from 'amazon-chime-sdk-component-library-react';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
     <ThemeProvider theme={lightTheme}>
       <App />
-    </ThemeProvider>,
-  document.getElementById('root')
+    </ThemeProvider>
+  </React.StrictMode>,
 );
 
 reportWebVitals();
